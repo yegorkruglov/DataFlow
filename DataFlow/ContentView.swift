@@ -22,6 +22,20 @@ struct ContentView: View {
             Spacer()
             ButtonView(timer: timer)
             Spacer()
+            
+            Button(action: { }) {
+                Text("Log out")
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(.white)
+            }
+            .frame(width: 200, height: 60)
+            .background(.blue)
+            .cornerRadius(20)
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(.black, lineWidth: 4)
+            )
         }
         .padding()
     }
