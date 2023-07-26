@@ -23,7 +23,7 @@ struct ContentView: View {
             ButtonView(timer: timer)
             Spacer()
             
-            Button(action: { }) {
+            Button(action: { logoutUser() }) {
                 Text("Log out")
                     .font(.title)
                     .bold()
@@ -38,6 +38,10 @@ struct ContentView: View {
             )
         }
         .padding()
+    }
+    
+    private func logoutUser() {
+        userSettings.isRegistered.toggle()
     }
 }
 
