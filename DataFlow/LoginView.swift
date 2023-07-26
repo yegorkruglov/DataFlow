@@ -35,6 +35,7 @@ struct LoginView: View {
             Button(action: registerUser) {
                 Label("OK", systemImage: "checkmark.circle")
             }
+            .disabled(name.count <= 3)
         }
     }
     
