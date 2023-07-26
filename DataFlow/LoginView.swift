@@ -15,16 +15,23 @@ struct LoginView: View {
         VStack {
             ZStack {
                 TextField("Enter your name...", text: $name)
+                    .cornerRadius(20)
                     .multilineTextAlignment(.center)
+                    .frame(height: 60)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.accentColor, lineWidth: 2)
+                    }
+                
                 HStack {
                     Spacer()
                     Text("\(name.count)")
-                        .padding(.trailing, 16)
                         .foregroundColor(name.count > 3 ? .green : .red)
+                        .padding(.trailing)
                 }
-                    
-                    
             }
+            .padding()
+            
             Button(action: registerUser) {
                 Label("OK", systemImage: "checkmark.circle")
             }
