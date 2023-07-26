@@ -13,8 +13,18 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
-           TextField("Enter your name...", text: $name)
-                .multilineTextAlignment(.center)
+            ZStack {
+                TextField("Enter your name...", text: $name)
+                    .multilineTextAlignment(.center)
+                HStack {
+                    Spacer()
+                    Text("\(name.count)")
+                        .padding(.trailing, 16)
+                        .foregroundColor(name.count > 3 ? .green : .red)
+                }
+                    
+                    
+            }
             Button(action: registerUser) {
                 Label("OK", systemImage: "checkmark.circle")
             }
