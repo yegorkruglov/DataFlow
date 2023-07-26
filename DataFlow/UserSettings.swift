@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
 
 final class UserSettings: ObservableObject {
-    @Published var isRegistered = false
-    var name = ""
+    @AppStorage("isRegistered") var isRegistered = false
+    @AppStorage("name") var name = ""
 }
